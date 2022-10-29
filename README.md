@@ -1,7 +1,7 @@
 # monitoringSystem
 system that will enable health monitoring of webservers in the cloud
 
-## this system developed with nodejs and mysql. 
+## this system developed with nodejs and mysql database . 
 
 
 
@@ -18,8 +18,8 @@ every 60 second system monitor all servers url status by api request and store t
 It is possible using API to:
 
 - create new servers
-- edit server
-- delete server
+- edit a server
+- delete a server
 - display all servers (in servers table) and their current heallt status
 - display detailts about specific webserver request history logs
 
