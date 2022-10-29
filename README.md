@@ -80,6 +80,14 @@ finnaly run coomand in terminal :
 
 npm run dev
 
+** There are thunder collection file, using this file you can create api requests. 
+
+![image](https://user-images.githubusercontent.com/45131527/198846829-e7771944-d8a0-4be1-ab27-251cbc02210e.png)
+
+
+
+
+
 
 
 
