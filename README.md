@@ -1,12 +1,12 @@
 # monitoringSystem
 system that will enable health monitoring of webservers in the cloud
 
-this system developed with nodejs and mysql. 
+## this system developed with nodejs and mysql. 
 
 
 
 there are 2 tables in mysql database:
-1. servers (serverName ,urlServer , lasatStatus , healthly, unHealthly and last monitor)
+## 1. servers (serverName ,urlServer , lasatStatus , healthly, unHealthly and last monitor)
 ![image](https://user-images.githubusercontent.com/45131527/198827313-6a79d978-6bbf-4a15-8c46-7a9a334e6633.png)
 
 
@@ -17,27 +17,27 @@ every 60 second system monitor all servers url status by api request and store t
 
 It is possible using API to:
 
-* create new servers
-* edit server
-* delete server
-* display all servers (in servers table) and their current heallt status
-* display detailts about specific webserver request history logs
+- create new servers
+- edit server
+- delete server
+- display all servers (in servers table) and their current heallt status
+- display detailts about specific webserver request history logs
 
-Pre-requisites : 
+## Pre-requisites : 
 
-install Node.js
+ install Node.js
 
-clone the repository:
+ clone the repository:
 
 git clone <url>
 
 install dependencies:
 
-npm i express
-npm i axios
-npm i node-schedule
-npm i perf_hooks
-npm i env
+ - npm i express
+ - npm i axios
+ - npm i node-schedule
+ - npm i perf_hooks
+ - npm i env
 
 create ".env" file  in "backend1" folder and add process.env.MYSQL_PASSWORD :
 
@@ -76,7 +76,7 @@ also in schema.sql file
 
 
 
-and finnaly run coomand in terminal : 
+finnaly run coomand in terminal : 
 
 npm run dev
 
