@@ -5,12 +5,12 @@ system that will enable health monitoring of webservers in the cloud
 
 
 
-there are 2 tables in mysql database:
+there are 2 tables:
 ## 1. servers (serverName ,urlServer , lasatStatus , healthly, unHealthly and last monitor)
 ![image](https://user-images.githubusercontent.com/45131527/198827313-6a79d978-6bbf-4a15-8c46-7a9a334e6633.png)
 
 
-every 60 second system monitor all servers url status by api request and store the status in table called monitorHistory (id , serverName , statusResponse , monitorTime , latincyTime)
+every 60 seconds system monitor all servers url status by api request and store the status in table called monitorHistory (id , serverName , statusResponse , monitorTime , latincyTime)
 
 ![image](https://user-images.githubusercontent.com/45131527/198827431-f4b613c7-7a2a-4363-90a3-1cdf376f53c1.png)
 
