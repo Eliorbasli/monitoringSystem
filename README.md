@@ -91,8 +91,11 @@ npm run dev
 
 
 
+home page:
+![homePage](https://user-images.githubusercontent.com/45131527/211202955-2386d1c4-f146-4575-94e4-4050c5dd5360.png)
 
-
+Dashboard page (list of all server monitoring and logs in real time)
+![dashboardPage](https://user-images.githubusercontent.com/45131527/211202952-8e4b9503-cf00-4723-a87a-8b08953afc47.png)
 
 
 
