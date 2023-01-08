@@ -1,0 +1,19 @@
+.submitBtn,
+.login {
+  display: inline-block;
+  background-color: rgb(38, 30, 50);
+  font-size: 150%;
+  font-family: inherit;
+  font-weight: 500;
+  border: none;
+  padding: 8px 15px;
+  margin-bottom: 10%;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: white;
+}
+
+.submitBtn:hover {
+  background-color: rgb(117, 175, 250);
+}
