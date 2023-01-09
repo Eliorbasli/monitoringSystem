@@ -1,0 +1,21 @@
+.container2 {
+  background-color: rgb(116, 115, 115);
+  height: 89%;
+  width: 90%;
+}
+
+.titleBox {
+  color: rgb(7, 7, 7);
+}
+
+.log {
+  display: flex;
+  flex-direction: row;
+  background-color: aliceblue;
+  margin: 3px;
+  justify-content: space-between;
+}
+
+.log:hover {
+  background-color: rgb(53, 42, 42);
+}
