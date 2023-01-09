@@ -1,8 +1,15 @@
 import express from "express";
 
+import cors from "cors";
+
 const app = express();
 
+// import server from "./routes/server";
+
 app.use(express.json());
+app.use(cors());
+
+// app.use("/api/", "./routes/server");
 
 import {
   getServers,
@@ -18,16 +25,17 @@ import { monitoring } from "./monitor.js";
 monitoring();
 
 //get all server without logs
-app.get("/servers", async (req, res) => {
+app.get("/api/servers", async (req, res) => {
   try {
     const result = await getServers();
+
     res.status(202).send(result);
   } catch (err) {
     console.log(err);
   }
 });
 
-app.get("/allLogs", async (req, res) => {
+app.get("/api/allLogs", async (req, res) => {
   try {
     const result = await getAllHistory();
     res.status(202).send(result);
@@ -36,7 +44,7 @@ app.get("/allLogs", async (req, res) => {
   }
 });
 
-app.get("/server", async (req, res) => {
+app.get("/api/server", async (req, res) => {
   try {
     const { name } = req.body;
     const logs = await getMonitorsHistory(name);
@@ -47,15 +55,24 @@ app.get("/server", async (req, res) => {
 });
 
 //delete
-app.delete("/server", async (req, res) => {
-  const { name } = req.body;
-  const result = await deleteServerByName(name);
-  res.send(result);
+app.post("/api/deleteServer", async (req, res) => {
+  console.log(" from server -> /api/server method: delete");
+  try {
+    const { name } = req.body;
+    console.log(req.body);
+    const result = await deleteServerByName(name);
+    console.log("2. " + result);
+    res.status(200).send(result);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 //create server
-app.post("/server", async (req, res) => {
+app.post("/api/server", async (req, res) => {
   try {
+    console.log("2223");
     const { name, url } = req.body;
     const server = await createServer(name, url, "Failed");
     res.status(201).send(server);
@@ -65,7 +82,7 @@ app.post("/server", async (req, res) => {
 });
 
 // update url by name
-app.put("/update", async (req, res) => {
+app.put("/api/update", async (req, res) => {
   try {
     const { name, url } = req.body;
     const server = await updateUrlByName(name, url);

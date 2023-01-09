@@ -24,6 +24,7 @@ export function monitoring() {
           let latency = (performance.now() - startTime) / 1000;
 
           storeMonitor(i.serverName, response.status, latency);
+          //if request is succsesed, <=status
           if (response.status >= 200 && response.status < 300 && latency < 60) {
             if (i.healthly >= 4) {
               await updateStatus(i.serverName, "Succses");
@@ -31,12 +32,14 @@ export function monitoring() {
             await updateCol(i.serverName, "healthly");
             await updateCol(i.serverName, "unHealthly", 0);
           } else {
+            //if request is failed
             storeMonitor(i.serverName, response.status, latency);
           }
           console.log("status " + response.status + " from " + url);
         })
         .catch(async function (error) {
           console.log("error with " + i.serverName);
+          storeMonitor(i.serverName, 0, 0);
           if (i.unHealthly >= 2) {
             await updateStatus(i.serverName, "Failed");
           }
